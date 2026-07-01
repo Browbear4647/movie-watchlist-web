@@ -1,83 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CineTrack - Movie Watchlist</title>
-<link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Watchlist</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="stars"></div>
+  <header>
+    <h1>Movie Watchlist</h1>
+    <p>Keep track of movies you want to watch and movies you've already seen.</p>
+  </header>
 
-<!-- HEADER -->
-<header class="header">
-<div class="header-content">
-<h1 class="header-title">🎬 CineTrack</h1>
-<p class="header-subtitle">Your Personal Movie Universe</p>
-</div>
-</header>
+  <section>
+    <h2>Add a Movie</h2>
+    <form id="addForm">
+      <input type="text" id="titleInput" placeholder="Movie title" required>
+      <input type="number" id="yearInput" placeholder="Year" min="1888" max="2100">
+      <input type="text" id="genresInput" placeholder="Genres (comma separated)">
+      <button type="button" id="addBtn">Add Movie</button>
+    </form>
+  </section>
 
-<div class="container">
-<!-- ADD MOVIE FORM -->
-<section class="add-section card">
-<h2 class="section-title">Add to Watchlist</h2>
-<form class="add-form" id="addForm">
-<div class="form-group">
-<input type="text" id="titleInput" class="input-field" placeholder="Movie title" required>
-</div>
-<div class="form-row">
-<div class="form-group">
-<input type="number" id="yearInput" class="input-field" placeholder="Year" min="1900" max="2100">
-</div>
-<div class="form-group">
-<input type="text" id="genresInput" class="input-field" placeholder="Genres (comma separated)">
-</div>
-</div>
-<button type="button" id="addBtn" class="btn btn-primary">+ Add Movie</button>
-</form>
-</section>
+  <section>
+    <button id="showAllBtn" class="btn-filter active">All Movies</button>
+    <button id="showWatchedBtn" class="btn-filter">Watched</button>
+    <button id="showUnwatchedBtn" class="btn-filter">To Watch</button>
+    <button id="suggestBtn" class="btn-secondary">Suggest a Movie</button>
+  </section>
 
-<!-- CONTROLS -->
-<section class="controls-section">
-<button id="showAllBtn" class="btn btn-filter active">All Movies</button>
-<button id="showWatchedBtn" class="btn btn-filter">Watched ✓</button>
-<button id="showUnwatchedBtn" class="btn btn-filter">To Watch</button>
-<button id="suggestBtn" class="btn btn-secondary">🎲 Suggest a Movie</button>
-</section>
+  <section>
+    <h2>Genres</h2>
+    <div id="genreFilters"></div>
+  </section>
 
-<section class="genres-section card">
-<h2 class="section-title">Genres</h2>
-<div id="genreFilters" class="genre-filters"></div>
-</section>
+  <section>
+    <input type="text" id="searchInput" placeholder="Search movies...">
+    <button id="searchBtn">Search</button>
+  </section>
 
-<!-- SEARCH -->
-<section class="search-section">
-<input type="text" id="searchInput" class="input-field input-search" placeholder="🔍 Search movies...">
-<button id="searchBtn" class="btn btn-secondary">Search</button>
-</section>
+  <div id="message"></div>
 
-<!-- MESSAGE / LOG -->
-<div id="message" class="message"></div>
+  <section>
+    <h2>Movie List</h2>
+    <div id="movieList"></div>
+  </section>
 
-<!-- MOVIE LIST -->
-<section class="list-section">
-<h2 class="section-title">Movie Collection</h2>
-<div id="movieList" class="movie-grid">
-<!-- Movies will be added here by JavaScript -->
-</div>
-</section>
-
-</div>
-
-<footer class="footer">
-<p>CineTrack — Your Movie Companion 🎞️</p>
-</footer>
-
-<script src="watchlist.js"></script>
-<script src="app.js"></script>
+  <script src="watchlist.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
 
